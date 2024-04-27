@@ -18,33 +18,10 @@ class EntityManager implements EntityManagerInterface
      * @template T
      * @param class-string<T> $entityName
      * @param mixed           $id
-     * @param null|int        $lockMode
-     * @param null|int        $lockVersion
-     *
-     * @return null|T
-     */
-    public function find($entityName, $id, $lockMode = null, $lockVersion = null)
-    {
-    }
-
-    /**
-     * @template T
-     * @param class-string<T> $entityName
-     * @param mixed           $id
      *
      * @return null|T
      */
     public function getReference($entityName, $id)
-    {
-    }
-
-    /**
-     * @param object   $entity
-     * @param null|int $lockMode
-     *
-     * @return void
-     */
-    public function refresh($entity, $lockMode = null)
     {
     }
 }
