@@ -48,11 +48,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->add(1);
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                  |
-      | InvalidScalarArgument | Argument 1 of Doctrine\Common\Collections\Collection::add expects string, but 1 provided |
+      | Type            | Message                                                                                  |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::add expects string, but 1 provided |
     And I see no other errors
 
   @Collection::add
@@ -90,11 +89,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->contains(1);
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                       |
-      | InvalidScalarArgument | Argument 1 of Doctrine\Common\Collections\Collection::contains expects string, but 1 provided |
+      | Type            | Message                                                                                       |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::contains expects string, but 1 provided |
     And I see no other errors
 
   @Collection::contains
@@ -131,11 +129,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->remove("string key");
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                             |
-      | InvalidScalarArgument | Argument 1 of Doctrine\Common\Collections\Collection::remove expects int, but "string key" provided |
+      | Type            | Message                                                                                             |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::remove expects int, but 'string key' provided |
     And I see no other errors
 
   @Collection::remove
@@ -175,11 +172,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->removeElement(1);
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                            |
-      | InvalidScalarArgument | Argument 1 of Doctrine\Common\Collections\Collection::removeElement expects string, but 1 provided |
+      | Type            | Message                                                                                            |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::removeElement expects string, but 1 provided |
     And I see no other errors
 
   @Collection::removeElement
@@ -190,7 +186,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->removeElement(1);
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                            |
@@ -219,11 +214,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->containsKey("string key");
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                                  |
-      | InvalidScalarArgument | Argument 1 of Doctrine\Common\Collections\Collection::containsKey expects int, but "string key" provided |
+      | Type            | Message                                                                                                  |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::containsKey expects int, but 'string key' provided |
     And I see no other errors
 
   @Collection::containsKey
@@ -234,7 +228,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->containsKey("string key");
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                                  |
@@ -260,11 +253,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->get("string key");
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                          |
-      | InvalidScalarArgument | Argument 1 of Doctrine\Common\Collections\Collection::get expects int, but "string key" provided |
+      | Type            | Message                                                                                          |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::get expects int, but 'string key' provided |
     And I see no other errors
 
   @Collection::get
@@ -275,7 +267,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->get("string key");
       """
-      And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                          |
@@ -332,11 +323,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->set("string key", "d");
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                          |
-      | InvalidScalarArgument | Argument 1 of Doctrine\Common\Collections\Collection::set expects int, but "string key" provided |
+      | Type            | Message                                                                                          |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::set expects int, but 'string key' provided |
     And I see no other errors
 
   @Collection::set
@@ -347,7 +337,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->set("string key", "d");
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                          |
@@ -362,11 +351,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->set(1, 1);
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                  |
-      | InvalidScalarArgument | Argument 2 of Doctrine\Common\Collections\Collection::set expects string, but 1 provided |
+      | Type            | Message                                                                                  |
+      | InvalidArgument | Argument 2 of Doctrine\Common\Collections\Collection::set expects string, but 1 provided |
     And I see no other errors
 
   @Collection::set
@@ -377,7 +365,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->set(1, 1);
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                  |
@@ -586,11 +573,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->exists(function(int $_k, string $_v): int { return rand(0,1); });
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                                                                                             |
-      | InvalidScalarArgument | /Argument 1 of Doctrine\\Common\\Collections\\Collection::exists expects Closure\(int=, string=\):bool, but (impure-)?Closure\(int, string\):int(<0, 1>)? provided/ |
+      | Type            | Message                                                                                                                                                             |
+      | InvalidArgument | /Argument 1 of Doctrine\\Common\\Collections\\Collection::exists expects Closure\(int=, string=\):bool, but (impure-)?Closure\(int, string\):int(<0, 1>)? provided/ |
     And I see no other errors
 
   @Collection::exists
@@ -601,7 +587,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->exists(function(int $_k, string $_v): int { return rand(0,1); });
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                                                                                             |
@@ -666,11 +651,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->filter(function(string $_p): int { return rand(0,1); });
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                                                                                  |
-      | InvalidScalarArgument | /Argument 1 of Doctrine\\Common\\Collections\\Collection::filter expects Closure\(string=\):bool, but (impure-)?Closure\(string\):int(<0, 1>)? provided/ |
+      | Type            | Message                                                                                                                                                  |
+      | InvalidArgument | /Argument 1 of Doctrine\\Common\\Collections\\Collection::filter expects Closure\(string=\):bool, but (impure-)?Closure\(string\):int(<0, 1>)? provided/ |
     And I see no other errors
 
   @Collection::filter
@@ -681,7 +665,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->filter(function(string $_p): int { return rand(0,1); });
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                                                                                  |
@@ -748,11 +731,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->forAll(function(int $_k, string $_v): int { return rand(0,1); });
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                                                                                             |
-      | InvalidScalarArgument | /Argument 1 of Doctrine\\Common\\Collections\\Collection::forAll expects Closure\(int=, string=\):bool, but (impure-)?Closure\(int, string\):int(<0, 1>)? provided/ |
+      | Type            | Message                                                                                                                                                             |
+      | InvalidArgument | /Argument 1 of Doctrine\\Common\\Collections\\Collection::forAll expects Closure\(int=, string=\):bool, but (impure-)?Closure\(int, string\):int(<0, 1>)? provided/ |
     And I see no other errors
 
   @Collection::forAll
@@ -763,7 +745,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->forAll(function(int $_k, string $_v): int { return rand(0,1); });
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                                                                                             |
@@ -867,11 +848,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->partition(function(int $_p): int { return rand(0,1); });
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                                                                                        |
-      | InvalidScalarArgument | /Argument 1 of Doctrine\\Common\\Collections\\Collection::partition expects Closure\(int=, string=\):bool, but (impure-)?Closure\(int\):int(<0, 1>)? provided/ |
+      | Type            | Message                                                                                                                                                        |
+      | InvalidArgument | /Argument 1 of Doctrine\\Common\\Collections\\Collection::partition expects Closure\(int=, string=\):bool, but (impure-)?Closure\(int\):int(<0, 1>)? provided/ |
     And I see no other errors
 
   @Collection::partition
@@ -908,11 +888,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->indexOf(1);
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                      |
-      | InvalidScalarArgument | Argument 1 of Doctrine\Common\Collections\Collection::indexOf expects string, but 1 provided |
+      | Type            | Message                                                                                      |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::indexOf expects string, but 1 provided |
     And I see no other errors
 
   @Collection::indexOf
@@ -923,7 +902,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->indexOf(1);
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                      |
@@ -953,11 +931,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->slice("string key");
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                            |
-      | InvalidScalarArgument | Argument 1 of Doctrine\Common\Collections\Collection::slice expects int, but "string key" provided |
+      | Type            | Message                                                                                            |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::slice expects int, but 'string key' provided |
     And I see no other errors
 
   @Collection::slice
@@ -968,7 +945,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->slice("string key");
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                            |
@@ -983,11 +959,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->slice(1, "zzzz");
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                            |
-      | InvalidScalarArgument | Argument 2 of Doctrine\Common\Collections\Collection::slice expects int\|null, but "zzzz" provided |
+      | Type            | Message                                                                                            |
+      | InvalidArgument | Argument 2 of Doctrine\Common\Collections\Collection::slice expects int\|null, but 'zzzz' provided |
     And I see no other errors
 
   @Collection::slice
@@ -998,7 +973,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c->slice(1, "zzzz");
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                            |
@@ -1064,11 +1038,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c[] = 1.1;
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type                  | Message                                                                                                 |
-      | InvalidScalarArgument | Argument 2 of Doctrine\Common\Collections\Collection::offsetSet expects string, but float(1.1) provided |
+      | InvalidArgument | Argument 2 of Doctrine\Common\Collections\Collection::offsetSet expects string, but float(1.1) provided |
     And I see no other errors
 
   @Collections::ArrayAccess
@@ -1095,11 +1068,10 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c[10] = 1.1;
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                                 |
-      | InvalidScalarArgument | Argument 2 of Doctrine\Common\Collections\Collection::offsetSet expects string, but float(1.1) provided |
+      | Type            | Message                                                                                                 |
+      | InvalidArgument | Argument 2 of Doctrine\Common\Collections\Collection::offsetSet expects string, but float(1.1) provided |
     And I see no other errors
 
   @Collections::ArrayAccess
@@ -1110,7 +1082,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c[10] = 1.1;
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                                 |
@@ -1125,11 +1096,11 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c["10"] = "aaa";
       """
-    And I have Psalm older than "5.0" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
-      | Type                  | Message                                                                                              |
-      | InvalidScalarArgument | Argument 1 of Doctrine\Common\Collections\Collection::offsetSet expects int\|null, but "10" provided |
+      | Type            | Message                                                                                              |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::offsetGet expects int\|null, but '10' provided |
+      | InvalidArgument | Argument 1 of Doctrine\Common\Collections\Collection::offsetSet expects int\|null, but '10' provided |
     And I see no other errors
 
   @Collections::ArrayAccess
@@ -1140,7 +1111,6 @@ Feature: Collections
       $c = new ArrayCollection(["a", "b", "c"]);
       $c["10"] = "aaa";
       """
-    And I have Psalm newer than "4.99" (because of "changed issue type")
     When I run Psalm
     Then I see these errors
       | Type            | Message                                                                                              |
@@ -1154,8 +1124,10 @@ Feature: Collections
       """
       class MyCollection extends ArrayCollection {}
       """
-    And I have Psalm older than "5.0" (because of "template parameter requirements")
     When I run Psalm
+    Then I see these errors
+      | Type                 | Message                                                                                                          |
+      | MissingTemplateParam | MyCollection has missing template params when extending Doctrine\Common\Collections\ArrayCollection, expecting 2 |
     Then I see no errors
 
   @Collections::ArrayCollection
@@ -1165,6 +1137,5 @@ Feature: Collections
       /** @template-extends ArrayCollection<int, string> */
       class MyCollection extends ArrayCollection {}
       """
-    And I have Psalm newer than "4.99" (because of "template parameter requirements")
     When I run Psalm
     Then I see no errors
