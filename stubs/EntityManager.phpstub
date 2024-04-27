@@ -7,16 +7,6 @@ class EntityManager implements EntityManagerInterface
     /**
      * @template T
      * @param class-string<T> $entityName
-     *
-     * @return EntityRepository<T>
-     */
-    public function getRepository($entityName)
-    {
-    }
-
-    /**
-     * @template T
-     * @param class-string<T> $entityName
      * @param mixed           $id
      *
      * @return null|T

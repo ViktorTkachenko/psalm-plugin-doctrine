@@ -8,15 +8,6 @@ interface EntityManagerInterface extends ObjectManager
 {
     /**
      * @param class-string<T> $entityName
-     *
-     * @return EntityRepository<T>
-     *
-     * @template T
-     */
-    public function getRepository(string $entityName);
-
-    /**
-     * @param class-string<T> $entityName
      * @param mixed           $id
      *
      * @return T|null
